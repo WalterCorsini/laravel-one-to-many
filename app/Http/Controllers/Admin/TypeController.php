@@ -30,7 +30,8 @@ class TypeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        dd($request->all());
+        return view("admin.types.index");
     }
 
     /**
