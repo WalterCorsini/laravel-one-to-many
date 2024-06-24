@@ -41,6 +41,12 @@
         @endif
         {{-- /description --}}
 
+        {{-- type --}}
+        <p>
+            <strong>Tipologia:</strong> {{ $project->type->name }}
+        </p>
+        {{-- type --}}
+
         <p>
             <strong>slug :</strong>
             {{ $project->slug }}
@@ -54,4 +60,6 @@
 
     </div>
     {{-- details record --}}
+
+
 @endsection
