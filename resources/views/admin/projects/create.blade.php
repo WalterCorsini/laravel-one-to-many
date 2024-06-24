@@ -53,6 +53,15 @@
         type="text" id="description" name="description">{{old('description')}}</textarea>
     {{-- description --}}
 
+    {{-- type --}}
+    <select class="mt-2 mb-3" name="type_id" id="type_id">
+        <option value="">Seleziona</option>
+        @foreach ($typeList as $key => $curType)
+        <option value="{{$key+1}}">{{ $curType->name }}</option>
+        @endforeach
+    </select>
+    {{-- /type --}}
+
     {{-- file --}}
     <label for="cover_image"> Immagine</label>
     <input class="form-control

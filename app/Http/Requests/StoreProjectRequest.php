@@ -25,6 +25,7 @@ class StoreProjectRequest extends FormRequest
         return [
             'title'             => ['required', 'min:10', Rule::unique('projects')->ignore($this->project)],
             'description'       => ['nullable', 'min:20'],
+            'type_id'           => ['nullable'],
             'cover_image'       => ['nullable', 'image', 'mimes: jpeg,jpg', 'max:2048'],
         ];
     }
