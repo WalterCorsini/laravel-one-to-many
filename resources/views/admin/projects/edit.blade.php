@@ -63,7 +63,7 @@
         <select class="mt-2 mb-3" name="type_id" id="type_id">
             <option value="">Seleziona</option>
             @foreach ($typeList as $key => $curType)
-            <option @selected($curType->type_id === $key) value="{{$key+1}}">{{ $curType->name }}</option>
+            <option @selected($project->type_id === $key+1) value="{{$key+1}}">{{ $curType->name }}</option>
             @endforeach
         </select>
         {{-- /type --}}
