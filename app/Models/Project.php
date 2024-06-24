@@ -9,5 +9,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Project extends Model
 {
     use HasFactory,SoftDeletes;
-    protected $fillable = ['title','description','slug','cover_image'];
+    protected $fillable = ['title','description','slug','cover_image','type_id'];
+    public function type(){
+        return $this->belongsTo(Type::class);
+    }
 }
