@@ -15,7 +15,7 @@ class ProjectsTableSeeder extends Seeder
      */
     public function run(Faker $faker): void
     {
-        // Array di tipi per il seeder di TypesTableSeeder
+        // array types
         $arrayTypes = [
             [
                 'name' => 'science',
@@ -35,7 +35,7 @@ class ProjectsTableSeeder extends Seeder
             ],
         ];
 
-        // Ciclo foreach per creare e salvare i tipi
+        // create record for table types
         foreach ($arrayTypes as $curType) {
             $type = new Type();
             $type->name = $curType['name'];
@@ -43,9 +43,7 @@ class ProjectsTableSeeder extends Seeder
             $type->save();
         }
 
-
-
-        // Genera progetti con dati casuali
+        // create record for table projects
         for ($i = 0; $i < 10; $i++) {
             $project = new Project();
             $project->title = $faker->sentence(3);
@@ -53,7 +51,6 @@ class ProjectsTableSeeder extends Seeder
             $project->description = $faker->text(255);
             $project->slug = Str::slug($project->title);
             $project->save();
-
         }
 
     }

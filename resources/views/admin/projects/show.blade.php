@@ -42,9 +42,11 @@
         {{-- /description --}}
 
         {{-- type --}}
+        @if (isset($project->type->name))
         <p>
             <strong>Tipologia:</strong> {{ $project->type->name }}
         </p>
+        @endif
         {{-- type --}}
 
         <p>
