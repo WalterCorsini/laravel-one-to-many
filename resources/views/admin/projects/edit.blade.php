@@ -59,6 +59,16 @@
 
         {{-- /description --}}
 
+        {{-- type --}}
+        <select class="mt-2 mb-3" name="type_id" id="type_id">
+            <option value="">Seleziona</option>
+            <option @selected($project->type_id === 1) value="1">science</option>
+            <option @selected($project->type_id === 2) value="2">mathematics</option>
+            <option @selected($project->type_id === 3) value="3">informatics</option>
+            <option @selected($project->type_id === 4) value="4">psycology</option>
+        </select>
+        {{-- /type --}}
+
 
         {{-- file --}}
         <label for="cover_image"> Immagine</label>

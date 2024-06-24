@@ -56,22 +56,6 @@ class ProjectController extends Controller
         return view("admin.projects.show", compact("project"));
     }
 
-
-    // the slug that is searched for in the table is passed to the method as a parameter.
-    // in this case the exceptions are not handled automatically and we create a condition to handle them
-    // public function show(string $slug)
-    // {
-    //     $project = Project::where('slug', $slug)->first();
-    //     if(!$project) {
-    //         abort(404);
-    //     }
-    //     return view('admin.projects.show', compact('project'));
-    // }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
-    // use dipendency injection to pass Slug
     public function edit(Project $project)
     {
         return view('admin.projects.edit', compact('project'));
@@ -83,10 +67,6 @@ class ProjectController extends Controller
     public function update(UpdateProjectRequest $request, Project $project)
     {
         $data = $request->validated();
-        // questo metodo crea la copia esatta del titolo è quindi non va bene.
-        // $data['slug'] = $data['title'];
-        //usiamo questo metodo perche lo slug si basa sul titolo ma elimina gli spazi e lo rende minuscolo.
-
         if (isset($data['cover_image'])) {
             if ($project->cover_image) {
                 Storage::delete($project->cover_image);
