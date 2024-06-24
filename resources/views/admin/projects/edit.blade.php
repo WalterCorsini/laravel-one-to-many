@@ -62,10 +62,12 @@
         {{-- type --}}
         <select class="mt-2 mb-3" name="type_id" id="type_id">
             <option value="">Seleziona</option>
-            <option @selected($project->type_id === 1) value="1">science</option>
-            <option @selected($project->type_id === 2) value="2">mathematics</option>
+            @foreach ($typeList as $key => $curType)
+            <option @selected($curType->type_id === $key) value="{{$key+1}}">{{ $curType->name }}</option>
+            @endforeach
+            {{-- <option @selected($project->type_id === 2) value="2">mathematics</option>
             <option @selected($project->type_id === 3) value="3">informatics</option>
-            <option @selected($project->type_id === 4) value="4">psycology</option>
+            <option @selected($project->type_id === 4) value="4">psycology</option> --}}
         </select>
         {{-- /type --}}
 
