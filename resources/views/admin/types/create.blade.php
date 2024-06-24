@@ -6,13 +6,13 @@
     method="POST">
     @csrf
 {{-- type --}}
-<label for="type"> Nome: </label>
-<input type="text" id="type" name="type">
+<label for="name"> Nome: </label>
+<input type="text" id="name" name="name">
 {{-- /type --}}
 
 {{-- type --}}
 <label for="color"> Colore: </label>
-<input type="text" id="type" name="color">
+<input type="text" id="color" name="color">
 {{-- /type --}}
 
 <button type="submit" class="btn btn-success mt-5 w-25 m-auto">crea</button>
