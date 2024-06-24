@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreTypeRequest;
+use App\Http\Requests\UpdateTypeRequest;
 use Illuminate\Http\Request;
 use App\Models\Type;
 
@@ -51,17 +52,23 @@ class TypeController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit($type)
     {
-        //
+        $element = Type::where('id',$type)->first();
+        $typeList = Type::all();
+        return view('admin.types.edit',compact('element','typeList'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateTypeRequest $request, $type)
     {
-        //
+        $data = $request->validated();
+        $element = Type::where('id',$type)->first();
+        $element->fill($data);
+        $element->save();
+        return redirect()->route('admin.types.index');
     }
 
     /**

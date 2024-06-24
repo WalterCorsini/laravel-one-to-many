@@ -30,8 +30,15 @@
                 </td>
                 {{-- button --}}
                 <td>
-                {{-- se modifico il valore dell'id devo modificare anche il type_id di project non so se avviene in automatico --}}
-                    <a class="btn btn-success" href=""><i class="fa-solid fa-pen"></i></a>
+                    {{-- edit btn --}}
+                    <a class="btn btn-success"
+                        href="{{ route('admin.types.edit', ['type' => $curType->id]) }}">
+                        <i class="fa-solid fa-pen"></i>
+                    </a>
+                    {{-- /edit btn --}}
+                    <a class="btn btn-danger" href="">
+                        <i class="fa-solid fa-trash"></i>
+                    </a>
                 </td>
                 {{-- button --}}
             </tr>

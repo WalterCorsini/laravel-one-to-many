@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+<h1 class="text-center mt-5">Aggiungi Tipo: </h1>
 <div class="mt-5 w-50 m-auto">
     @include('partials.errors')
 </div>
@@ -9,10 +9,10 @@
     action="{{ route('admin.types.store') }}"
     method="POST">
     @csrf
-{{-- type --}}
+{{-- name --}}
 <label for="name"> Nome: </label>
 <input type="text" id="name" name="name">
-{{-- /type --}}
+{{-- /name --}}
 
 {{-- type --}}
 <label for="color"> Colore: </label>
