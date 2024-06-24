@@ -65,25 +65,31 @@
                             </li>
                             {{-- link pagina projects --}}
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('admin.projects.index') }}">
+                                <a class="nav-link text-danger" href="{{ route('admin.projects.index') }}">
                                     <i class="fa-solid fa-home"></i> Home/Projects
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('admin.types.index') }}">
+                                <a class="nav-link text-danger" href="{{ route('admin.projects.create') }}">
+                                    <i class="fa-solid fa-plus"></i> Add Project
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-danger" href="{{ route('admin.projects.trash') }}">
+                                    <i class="fa-solid fa-trash"></i> Trash/Project
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-success" href="{{ route('admin.types.index') }}">
                                     <i class="fa-solid fa-home"></i> Type
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('admin.projects.create') }}">
-                                    <i class="fa-solid fa-plus"></i> Add
+                                <a class="nav-link text-success" href="{{ route('admin.types.create') }}">
+                                    <i class="fa-solid fa-home"></i> Add/Type
                                 </a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-white" href="{{ route('admin.projects.trash') }}">
-                                    <i class="fa-solid fa-trash"></i> Trash
-                                </a>
-                            </li>
+
                         </ul>
 
 
