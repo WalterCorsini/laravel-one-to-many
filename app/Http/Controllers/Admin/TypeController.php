@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreTypeRequest;
 use Illuminate\Http\Request;
 use App\Models\Type;
 
@@ -22,16 +23,16 @@ class TypeController extends Controller
      */
     public function create()
     {
-        return view("admin.types.create");
+        $colors=['red','yellow','blue','green','pink','black'];
+        return view("admin.types.create",compact("colors"));
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreTypeRequest $request)
     {
-        $data = $request->all();
-        // dd($data);
+        $data = $request->validated();
         $type = new Type();
         $type->fill($data);
         $type->save();

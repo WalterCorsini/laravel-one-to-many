@@ -44,7 +44,7 @@ class ProjectsTableSeeder extends Seeder
         }
 
         // create record for table projects
-        for ($i = 0; $i < 10; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $project = new Project();
             $project->title = $faker->sentence(3);
             $project->type_id = $faker->numberBetween(1,4);
