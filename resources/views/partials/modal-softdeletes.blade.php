@@ -1,4 +1,4 @@
-<div class="modal fade" id="delete-modal" data-form="{{ $curProject->id }}"
+<div class="modal fade" id="delete-modal" data-form="{{ $curElem->id }}"
     data-bs-keyboard="false" tabindex="-1" aria-labelledby="ModaleLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

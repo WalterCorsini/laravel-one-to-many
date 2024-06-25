@@ -68,36 +68,36 @@
 
                 {{-- t-body --}}
                 <tbody>
-                    @foreach ($projectsList as $curProject)
+                    @foreach ($projectsList as $curElem)
                         <tr>
-                            <td>{{ $curProject->title }}</td>
+                            <td>{{ $curElem->title }}</td>
                             <td>
-                                <span>{{ $curProject->description }}</span>
+                                <span>{{ $curElem->description }}</span>
                             </td>
                             <td class="h-100">
                                 <div class="h-100 d-flex gap-2">
 
                                     {{-- show btn --}}
                                     <a class="btn btn-info"
-                                        href="{{ route('admin.projects.show', ['project' => $curProject->slug]) }}">
+                                        href="{{ route('admin.projects.show', ['project' => $curElem->slug]) }}">
                                         <i class="fa-solid fa-eye"></i>
                                     </a>
                                     {{-- /show btn --}}
 
                                     {{-- edit btn --}}
                                     <a class="btn btn-success"
-                                        href="{{ route('admin.projects.edit', ['project' => $curProject->slug]) }}">
+                                        href="{{ route('admin.projects.edit', ['project' => $curElem->slug]) }}">
                                         <i class="fa-solid fa-pen"></i>
                                     </a>
                                     {{-- /edit btn --}}
 
                                     {{-- delete btn  --}}
                                     <form class="delete"
-                                        action="{{ route('admin.projects.destroy', ['project' => $curProject->slug]) }}"
+                                        action="{{ route('admin.projects.destroy', ['project' => $curElem->slug]) }}"
                                         method="POST">
                                         @csrf
                                         @method('DELETE')
-                                        <button data-project-title="{{ $curProject->title }}" class="btn btn-danger"><i
+                                        <button data-title="{{ $curElem->title }}" class="btn btn-danger"><i
                                                 class="fa-solid fa-trash"></i></button>
                                     </form>
                                     {{-- /delete btn  --}}

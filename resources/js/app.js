@@ -15,7 +15,7 @@ if(deleteBtns.length>0){
         btn.addEventListener('click', function (e){
 
             e.preventDefault();
-            const title = btn.dataset.projectTitle;
+                const title = btn.dataset.title;
 
             document.getElementById('message').innerHTML = `stai per cancellare<br> <strong>${title}</strong>,<br> ne sei sicuro?`;
 
