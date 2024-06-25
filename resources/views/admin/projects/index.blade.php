@@ -4,17 +4,18 @@
     <div class="container ms-table-container mt-5">
 
         <div class="d-flex justify-content-center">
+
 {{-- select page --}}
 <div class="me-5">
     <form action="{{ route('admin.projects.index')}}" method="GET">
-        <label for="perPage">Numero Record da visualizzare</label>
-        <select name="perPage" id="perPage">
+        <label for="numberPage">Numero Record da visualizzare</label>
+        <select name="numberPage" id="numberPage">
             <option value="5" @selected($projectsList->perPage() == 5)>5</option>
             <option value="10" @selected($projectsList->perPage() == 10)>10</option>
             <option value="15" @selected($projectsList->perPage() == 15)>15</option>
         </select>
 
-        <button type="submit" class="ms-3">Apply</button>
+        <button type="submit" class="ms-3">Filtra</button>
     </form>
 </div>
 {{-- /select page --}}

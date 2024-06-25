@@ -19,8 +19,8 @@ class ProjectController extends Controller
      */
     public function index(Request $request)
     {
-        $perPage = $request->perPage ? $request->perPage : 10;
-        $projectsList = Project::paginate($perPage)->appends(['perPage' => $perPage]);
+        $value = $request->numberPage ? $request->numberPage : 10;
+        $projectsList = Project::paginate($value)->appends(['numberPage' => $value]);
         return view('admin.projects.index', compact('projectsList'));
     }
 
