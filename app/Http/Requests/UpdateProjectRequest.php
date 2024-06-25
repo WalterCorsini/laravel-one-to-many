@@ -24,7 +24,7 @@ class UpdateProjectRequest extends FormRequest
         return [
             'title'             => ['required', 'min:10', Rule::unique('projects')->ignore($this->project)],
             'description'       => ['nullable', 'min:20'],
-            'type_id'           => ['nullable'],
+            'type_id'           => ['nullable', 'exists:Types,id'],
             'cover_image'       => ['nullable', 'image', 'mimes: jpeg,jpg', 'max:2048'],
         ];
     }
@@ -36,6 +36,7 @@ class UpdateProjectRequest extends FormRequest
             'min'               => 'Titolo: devi inserire un minimo di :min caratteri',
             'unique'            => 'non si possono avere due titoli uguali',
             'description.min'   => 'Descrizione: devi inserire un minimo di 20 caratteri',
+            'type_id'    => 'l\'id non esiste',
             'cover_image.image' => 'deve essere una foto',
             'cover_image.mimes' => 'formato consentito jpg o jpeg',
             'cover_image.max'   => 'dimensione massima 2 mb',

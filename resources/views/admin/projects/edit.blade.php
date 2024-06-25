@@ -1,7 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
-
+@include('partials.errors')
     {{-- form --}}
     <form class="w-50 m-auto d-flex flex-column pt-5"
         action="{{ route('admin.projects.update', ['project' => $project->slug]) }}" method="POST"

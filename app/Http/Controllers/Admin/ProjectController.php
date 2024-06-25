@@ -71,7 +71,9 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
+
         $data = $request->validated();
+        // dd($data);
         if (isset($data['cover_image'])) {
             if ($project->cover_image) {
                 Storage::delete($project->cover_image);
