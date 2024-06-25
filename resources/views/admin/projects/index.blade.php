@@ -61,6 +61,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Title</th>
+                        <th scope="col">Type</th>
                         <th scope="col">Description</th>
                         <th scope="col">Button</th>
                     </tr>
@@ -70,7 +71,12 @@
                 <tbody>
                     @foreach ($projectsList as $curElem)
                         <tr>
-                            <td>{{ $curElem->title }}</td>
+                            <td>
+                                <span>{{ $curElem->title }}</span>
+                            </td>
+                            <td>
+                                <span class="badge" style="background:{{$curElem->type?->color ? $curElem->type->color : 'black'}}">{{($curElem->type?->name) ? $curElem->type->name : 'NULL'}}</span>
+                            </td>
                             <td>
                                 <span>{{ $curElem->description }}</span>
                             </td>
