@@ -58,34 +58,34 @@
                     <div class="position-sticky pt-3">
                         <ul class="nav flex-column">
                             <li class="nav-item">
-                                <a class="nav-link text-white {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
+                                <a class="nav-link text-success {{ Route::currentRouteName() == 'dashboard' ? 'bg-secondary' : '' }}"
                                     href="{{ route('admin.dashboard') }}">
                                     <i class="fa-solid fa-tachometer-alt fa-lg fa-fw"></i> Dashboard
                                 </a>
                             </li>
                             {{-- link pagina projects --}}
                             <li class="nav-item">
-                                <a class="nav-link text-danger" href="{{ route('admin.projects.index') }}">
+                                <a class="nav-link text-white" href="{{ route('admin.projects.index') }}">
                                     <i class="fa-solid fa-home"></i> Home/Projects
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-danger" href="{{ route('admin.projects.create') }}">
+                                <a class="nav-link text-white" href="{{ route('admin.projects.create') }}">
                                     <i class="fa-solid fa-plus"></i> Add Project
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-danger" href="{{ route('admin.projects.trash') }}">
+                                <a class="nav-link text-white" href="{{ route('admin.projects.trash') }}">
                                     <i class="fa-solid fa-trash"></i> Trash/Project
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-success" href="{{ route('admin.types.index') }}">
+                                <a class="nav-link text-danger" href="{{ route('admin.types.index') }}">
                                     <i class="fa-solid fa-home"></i> Type
                                 </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-success" href="{{ route('admin.types.create') }}">
+                                <a class="nav-link text-danger" href="{{ route('admin.types.create') }}">
                                     <i class="fa-solid fa-home"></i> Add/Type
                                 </a>
                             </li>

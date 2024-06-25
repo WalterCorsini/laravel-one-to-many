@@ -1,10 +1,11 @@
 <?php
 
 namespace Database\Seeders;
+use Illuminate\Database\Seeder;
+
 
 use App\Models\Project;
 use App\Models\Type;
-use Illuminate\Database\Seeder;
 use Faker\Generator as Faker;
 use Illuminate\Support\Str;
 
