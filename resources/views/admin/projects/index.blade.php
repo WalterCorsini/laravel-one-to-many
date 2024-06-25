@@ -4,10 +4,9 @@
     <div class="container ms-table-container mt-5">
 
         <div class="d-flex justify-content-center">
-
 {{-- select page --}}
 <div class="me-5">
-    <form action="">
+    <form action="{{ route('admin.projects.index')}}" method="GET">
         <label for="perPage">Numero Record da visualizzare</label>
         <select name="perPage" id="perPage">
             <option value="5" @selected($projectsList->perPage() == 5)>5</option>
