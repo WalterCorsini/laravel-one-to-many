@@ -11,14 +11,16 @@ use App\Http\Requests\UpdateProjectRequest;
 use Illuminate\Support\Facades\Storage;
 use App\Models\Type;
 
+
 class ProjectController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $projectsList = Project::paginate(10);
+        $perPage = $request->perPage ? $request->perPage : 10;
+        $projectsList = Project::paginate($perPage)->appends(['perPage' => $perPage]);
         return view('admin.projects.index', compact('projectsList'));
     }
 

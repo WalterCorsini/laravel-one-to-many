@@ -3,11 +3,35 @@
 @section('content')
     <div class="container ms-table-container mt-5">
 
+        <div class="d-flex justify-content-center">
+
+{{-- select page --}}
+<div class="me-5">
+    <form action="">
+        <label for="perPage">Numero Record da visualizzare</label>
+        <select name="perPage" id="perPage">
+            <option value="5" @selected($projectsList->perPage() == 5)>5</option>
+            <option value="10" @selected($projectsList->perPage() == 10)>10</option>
+            <option value="15" @selected($projectsList->perPage() == 15)>15</option>
+        </select>
+
+        <button type="submit" class="ms-3">Apply</button>
+    </form>
+</div>
+{{-- /select page --}}
+
+            {{-- paginator --}}
+            <div>
+                {{ $projectsList->links()}}
+            </div>
+            {{-- /paginator --}}
+
+        </div>
+
         <div class="d-flex justify-content-between align-items-center">
             {{-- title --}}
             <h1 class="fw-bold">Projects</h1>
             {{-- /title --}}
-            {{ $projectsList->links()}}
 
             {{-- success message --}}
             @if (session('message'))
@@ -90,9 +114,13 @@
 
                 </table>
                 {{-- /table --}}
+
+                {{-- paginator --}}
                 <div class="d-flex justify-content-center">
                     {{ $projectsList->links()}}
                 </div>
+                {{-- /paginator --}}
+
         </div>
 
     </div>
