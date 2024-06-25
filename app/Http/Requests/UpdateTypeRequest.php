@@ -24,7 +24,7 @@ class UpdateTypeRequest extends FormRequest
     {
         return [
             'name' => ['required','min:5',Rule::unique('types')->ignore($this->type)],
-            'color' => ['required'],
+            'color' => ['required','in:red,yellow,blue,green,pink,black'],
         ];
     }
 
@@ -32,6 +32,7 @@ class UpdateTypeRequest extends FormRequest
         return[
             'required'          => 'Il campo :attribute è vuoto',
             'unique'            => 'non si possono avere due titoli uguali',
+            'color.in'          => 'non è consentito cambiare il valore delle opzioni!!!',
         ];
     }
 }
