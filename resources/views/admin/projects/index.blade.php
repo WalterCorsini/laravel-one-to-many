@@ -7,6 +7,7 @@
             {{-- title --}}
             <h1 class="fw-bold">Projects</h1>
             {{-- /title --}}
+            {{ $projectsList->links()}}
 
             {{-- success message --}}
             @if (session('message'))
@@ -84,11 +85,14 @@
                                 </div>
                             </td>
                         </tr>
-                    @endforeach
-                </tbody>
+                        @endforeach
+                    </tbody>
 
-            </table>
-            {{-- /table --}}
+                </table>
+                {{-- /table --}}
+                <div class="d-flex justify-content-center">
+                    {{ $projectsList->links()}}
+                </div>
         </div>
 
     </div>
