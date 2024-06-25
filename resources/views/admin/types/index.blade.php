@@ -36,9 +36,17 @@
                         <i class="fa-solid fa-pen"></i>
                     </a>
                     {{-- /edit btn --}}
-                    <a class="btn btn-danger" href="">
-                        <i class="fa-solid fa-trash"></i>
-                    </a>
+
+                    {{-- delete btn --}}
+                    <form action="{{ route('admin.types.destroy', ['type' => $curType->id]) }}" method="POST">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger">
+                            <i class="fa-solid fa-trash"></i>
+                        </button>
+                    </form>
+                    {{-- /delete btn--}}
+
                 </td>
                 {{-- button --}}
             </tr>
